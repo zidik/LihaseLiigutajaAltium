@@ -1,0 +1,2 @@
+Add Pin To Net: Pin=U1-18 Old Net=EN_1 New Net=EN_3
+Change Pin Designator/Name:  Old Designator=U1-18 Old Name=PD0 (OC0B/SCL/INT0) New Designator =PD7 (T0/OC4D/ADC10) New Name=27

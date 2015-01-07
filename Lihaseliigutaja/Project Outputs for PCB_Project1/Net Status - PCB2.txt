@@ -1,0 +1,64 @@
+Net Status Report
+Filename     : C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc
+Date         : 6.01.2015
+Time         : 20:13:10
+Time Elapsed : 00:00:00
+
+Nets, Layer, Length
+    3V3, Signal Layers Only, 113.5423mm
+    A0_0, Signal Layers Only, 25.1141mm
+    A0_1, Signal Layers Only, 30.656mm
+    A0_2, Signal Layers Only, 19.5722mm
+    A0_3, Signal Layers Only, 14.0302mm
+    A0_4, Signal Layers Only, 8.4745mm
+    A1_0, Signal Layers Only, 23.3276mm
+    A1_1, Signal Layers Only, 29.1147mm
+    A1_2, Signal Layers Only, 17.9316mm
+    A1_3, Signal Layers Only, 12.5357mm
+    A1_4, Signal Layers Only, 3.5785mm
+    EAP_IN, Signal Layers Only, 0mm
+    EAP_IN_CURRENT, Signal Layers Only, 0mm
+    EAP_OUT, Signal Layers Only, 3.3733mm
+    EN_0, Signal Layers Only, 24.5613mm
+    EN_1, Signal Layers Only, 30.1032mm
+    EN_2, Signal Layers Only, 19.0194mm
+    EN_3, Signal Layers Only, 13.4637mm
+    EN_4, Signal Layers Only, 7.9217mm
+    EXT_VCC, Signal Layers Only, 0mm
+    FLYBACK_CONTROL, Signal Layers Only, 0mm
+    FLYBACK_IN, Signal Layers Only, 0mm
+    FLYBACK_IN_CURRENT, Signal Layers Only, 0mm
+    GND, Signal Layers Only, 0mm
+    MISO, Signal Layers Only, 7.3855mm
+    MOSI, Signal Layers Only, 5.9257mm
+    NetC11_2, Signal Layers Only, 2.65mm
+    NetC12_2, Signal Layers Only, 6.3071mm
+    NetC14_2, Signal Layers Only, 7.6814mm
+    NetC18_2, Signal Layers Only, 0mm
+    NetC19_2, Signal Layers Only, 0mm
+    NetC1_1, Signal Layers Only, 2.8157mm
+    NetC6_2, Signal Layers Only, 21.5919mm
+    NetD1_2, Signal Layers Only, 1.55mm
+    NetD2_2, Signal Layers Only, 1.55mm
+    NetD3_2, Signal Layers Only, 1.55mm
+    NetD4_2, Signal Layers Only, 1.55mm
+    NetD5_1, Signal Layers Only, 34.6259mm
+    NetD5_2, Signal Layers Only, 25.2889mm
+    NetD6_1, Signal Layers Only, 26.2889mm
+    NetD6_2, Signal Layers Only, 34.9617mm
+    NetD7_2, Signal Layers Only, 0mm
+    NetJ1_D+, Signal Layers Only, 2.5571mm
+    NetJ1_D-, Signal Layers Only, 2mm
+    NetL2_2, Signal Layers Only, 0mm
+    NetP3_2, Signal Layers Only, 5.4446mm
+    NetR15_2, Signal Layers Only, 3.8733mm
+    NetR16_2, Signal Layers Only, 5.6517mm
+    NetR1_2, Signal Layers Only, 2.6mm
+    RST, Signal Layers Only, 21.6038mm
+    RXLED, Signal Layers Only, 2.677mm
+    SCK, Signal Layers Only, 10.5317mm
+    TXLED, Signal Layers Only, 14.4125mm
+    USB_D+, Signal Layers Only, 7.5503mm
+    USB_D-, Signal Layers Only, 4.4068mm
+    VBUS, Signal Layers Only, 31.5321mm
+count : 56

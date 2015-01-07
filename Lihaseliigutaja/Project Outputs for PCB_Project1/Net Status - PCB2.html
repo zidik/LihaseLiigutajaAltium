@@ -1,0 +1,526 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 { 
+			font-family : sans-serif;
+			color : white;
+			background-color : #21489e;
+			padding: 0.3em;
+		}
+		body { 
+			font-family : verdana;
+		}
+		td, th {  
+			padding: 0.5em;
+			text-align : center;
+			width : 18%;	
+		}
+		th { 
+			background-color : #A6CAF0;
+		
+		}
+		th.column1, td.column1 { 
+			text-align: left;
+			width : auto; 
+		}
+		table { 
+			width : 100%; 
+		}
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3 {
+			padding-top : 0.1em;
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width : auto;
+			vertical-align: top
+		}
+		.front_matter_column1 {
+			text-align : right;
+		}
+		.total_column1, .total_column {
+			font-weight : bold;	
+		}
+		.total_column1 {
+			text-align : right;
+		}
+		.front_matter_column2 {
+			text-align : center;
+		}
+		.front_matter_column3 {
+			text-align : left;
+		}
+		.warning, .error { 
+			color : red;
+			font-weight : bold;
+		}	
+		tr.onmouseout_odd { 
+			background-color : #EEEEE0 
+		}
+		tr.onmouseout_even { 
+			background-color : #F3F3E3   
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : lightYellow 
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #008000 
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+			
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);		
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {	
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}	
+	</script><title>Net Status Report</title>
+</head>
+<body onload="document.getElementById('radio_mm').click()"><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD14\Templates\AD-rgb_logo_223x64.gif
+		"><a href="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports" class="customize"><acronym title="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports">customize</acronym></a><h1>Net Status Report</h1>
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">6.01.2015</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">20:13:10</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc" class="file"><acronym title="C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc">C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc</acronym></a></td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Units</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">
+<form><input type="radio" name="radio_units" id="radio_mm" onclick="changeUnits(this, 'mm')">mm<input type="radio" name="radio_units" id="radio_mil" onclick="changeUnits(this, 'mil')">mils</form>
+</td>
+</tr>
+</table>
+<hr><a name="IDTJ1QEIHBKCE3HJP1UOO5IWQM2D"><table>
+<tr>
+<th class="column1">Nets</th>
+<th class="column2">Layer</th>
+<th class="column3">Length</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1227.165mil|Location2.X=2629.133mil|Location1.Y=1030.315mil|Location2.Y=2840.747mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1227.165mil|Location2.X=2629.133mil|Location1.Y=1030.315mil|Location2.Y=2840.747mil|Absolute=True">3V3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="44701705">113.5423mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1121.669mil|Location2.X=1891.929mil|Location1.Y=1598.228mil|Location2.Y=2712.795mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1121.669mil|Location2.X=1891.929mil|Location1.Y=1598.228mil|Location2.Y=2712.795mil|Absolute=True">A0_0</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="9887436">25.1141mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1145.48mil|Location2.X=1755.905mil|Location1.Y=1377.755mil|Location2.Y=2919.488mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1145.48mil|Location2.X=1755.905mil|Location1.Y=1377.755mil|Location2.Y=2919.488mil|Absolute=True">A0_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="12069301">30.656mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1149.417mil|Location2.X=1582.873mil|Location1.Y=1734.055mil|Location2.Y=2506.102mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1149.417mil|Location2.X=1582.873mil|Location1.Y=1734.055mil|Location2.Y=2506.102mil|Absolute=True">A0_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="7705572">19.5722mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1177.165mil|Location2.X=1447.047mil|Location1.Y=1629.724mil|Location2.Y=2299.409mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1177.165mil|Location2.X=1447.047mil|Location1.Y=1629.724mil|Location2.Y=2299.409mil|Absolute=True">A0_3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="5523706">14.0302mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1257.779mil|Location2.X=1771.85mil|Location1.Y=1393.7mil|Location2.Y=2092.716mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1257.779mil|Location2.X=1771.85mil|Location1.Y=1393.7mil|Location2.Y=2092.716mil|Absolute=True">A0_4</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3336427">8.4745mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1477.165mil|Location2.X=1891.929mil|Location1.Y=1629.724mil|Location2.Y=2719.783mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1477.165mil|Location2.X=1891.929mil|Location1.Y=1629.724mil|Location2.Y=2719.783mil|Absolute=True">A1_0</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="9184093">23.3276mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1477.165mil|Location2.X=1740.354mil|Location1.Y=1734.055mil|Location2.Y=2926.476mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1477.165mil|Location2.X=1740.354mil|Location1.Y=1734.055mil|Location2.Y=2926.476mil|Absolute=True">A1_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="11462490">29.1147mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1477.165mil|Location2.X=1687.102mil|Location1.Y=1734.055mil|Location2.Y=2513.09mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1477.165mil|Location2.X=1687.102mil|Location1.Y=1734.055mil|Location2.Y=2513.09mil|Absolute=True">A1_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="7059696">17.9316mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1367.913mil|Location2.X=1673.228mil|Location1.Y=1598.228mil|Location2.Y=2306.397mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1367.913mil|Location2.X=1673.228mil|Location1.Y=1598.228mil|Location2.Y=2306.397mil|Absolute=True">A1_3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="4935299">12.5357mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1477.165mil|Location2.X=1708.858mil|Location1.Y=1734.055mil|Location2.Y=2099.704mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1477.165mil|Location2.X=1708.858mil|Location1.Y=1734.055mil|Location2.Y=2099.704mil|Absolute=True">A1_4</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1408876">3.5785mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1477.165mil|Location2.X=2217.716mil|Location1.Y=1566.732mil|Location2.Y=2743.307mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1477.165mil|Location2.X=2217.716mil|Location1.Y=1566.732mil|Location2.Y=2743.307mil|Absolute=True">EAP_IN</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1812.795mil|Location2.X=2180.314mil|Location1.Y=1503.74mil|Location2.Y=2646.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1812.795mil|Location2.X=2180.314mil|Location1.Y=1503.74mil|Location2.Y=2646.85mil|Absolute=True">EAP_IN_CURRENT</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1435.728mil|Location2.X=1548.425mil|Location1.Y=1981.102mil|Location2.Y=2880.118mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1435.728mil|Location2.X=1548.425mil|Location1.Y=1981.102mil|Location2.Y=2880.118mil|Absolute=True">EAP_OUT</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1328059">3.3733mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1135.543mil|Location2.X=1803.346mil|Location1.Y=1289.173mil|Location2.Y=2634.055mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1135.543mil|Location2.X=1803.346mil|Location1.Y=1289.173mil|Location2.Y=2634.055mil|Absolute=True">EN_0</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="9669809">24.5613mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1159.354mil|Location2.X=1614.37mil|Location1.Y=1734.055mil|Location2.Y=2840.747mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1159.354mil|Location2.X=1614.37mil|Location1.Y=1734.055mil|Location2.Y=2840.747mil|Absolute=True">EN_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="11851673">30.1032mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1163.291mil|Location2.X=1447.047mil|Location1.Y=1661.22mil|Location2.Y=2427.362mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1163.291mil|Location2.X=1447.047mil|Location1.Y=1661.22mil|Location2.Y=2427.362mil|Absolute=True">EN_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="7487944">19.0194mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1243.905mil|Location2.X=1598.425mil|Location1.Y=1773.622mil|Location2.Y=2220.669mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1243.905mil|Location2.X=1598.425mil|Location1.Y=1773.622mil|Location2.Y=2220.669mil|Absolute=True">EN_3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="5300662">13.4637mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1271.653mil|Location2.X=1645.866mil|Location1.Y=1734.055mil|Location2.Y=2013.976mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1271.653mil|Location2.X=1645.866mil|Location1.Y=1734.055mil|Location2.Y=2013.976mil|Absolute=True">EN_4</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3118799">7.9217mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2431.889mil|Location2.X=2629.133mil|Location1.Y=1605.118mil|Location2.Y=1825.196mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2431.889mil|Location2.X=2629.133mil|Location1.Y=1605.118mil|Location2.Y=1825.196mil|Absolute=True">EXT_VCC</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1645.472mil|Location2.X=2164.566mil|Location1.Y=1734.055mil|Location2.Y=2327.952mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1645.472mil|Location2.X=2164.566mil|Location1.Y=1734.055mil|Location2.Y=2327.952mil|Absolute=True">FLYBACK_CONTROL</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1477.165mil|Location2.X=2123.228mil|Location1.Y=1535.236mil|Location2.Y=2231.496mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1477.165mil|Location2.X=2123.228mil|Location1.Y=1535.236mil|Location2.Y=2231.496mil|Absolute=True">FLYBACK_IN</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1812.795mil|Location2.X=1963.779mil|Location1.Y=1472.244mil|Location2.Y=2135.039mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1812.795mil|Location2.X=1963.779mil|Location1.Y=1472.244mil|Location2.Y=2135.039mil|Absolute=True">FLYBACK_IN_CURRENT</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1034.252mil|Location2.X=2501.18mil|Location1.Y=1021.259mil|Location2.Y=2880.118mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1034.252mil|Location2.X=2501.18mil|Location1.Y=1021.259mil|Location2.Y=2880.118mil|Absolute=True">GND</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1260.63mil|Location2.X=1488.385mil|Location1.Y=1202.755mil|Location2.Y=1368.307mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1260.63mil|Location2.X=1488.385mil|Location1.Y=1202.755mil|Location2.Y=1368.307mil|Absolute=True">MISO</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2907690">7.3855mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1360.63mil|Location2.X=1519.881mil|Location1.Y=1121.259mil|Location2.Y=1368.307mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1360.63mil|Location2.X=1519.881mil|Location1.Y=1121.259mil|Location2.Y=1368.307mil|Absolute=True">MOSI</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2332955">5.9257mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1607.086mil|Location2.X=1652.755mil|Location1.Y=1205.511mil|Location2.Y=1368.307mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1607.086mil|Location2.X=1652.755mil|Location1.Y=1205.511mil|Location2.Y=1368.307mil|Absolute=True">NetC11_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1043307">2.65mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1105.118mil|Location2.X=1447.047mil|Location1.Y=1503.74mil|Location2.Y=1591.732mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1105.118mil|Location2.X=1447.047mil|Location1.Y=1503.74mil|Location2.Y=1591.732mil|Absolute=True">NetC12_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2483113">6.3071mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1105.118mil|Location2.X=1447.047mil|Location1.Y=1535.236mil|Location2.Y=1753.149mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1105.118mil|Location2.X=1447.047mil|Location1.Y=1535.236mil|Location2.Y=1753.149mil|Absolute=True">NetC14_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3024162">7.6814mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1811.023mil|Location2.X=2001.181mil|Location1.Y=2083.464mil|Location2.Y=2355.385mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1811.023mil|Location2.X=2001.181mil|Location1.Y=2083.464mil|Location2.Y=2355.385mil|Absolute=True">NetC18_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1983.071mil|Location2.X=2255.117mil|Location1.Y=2449.606mil|Location2.Y=2743.307mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1983.071mil|Location2.X=2255.117mil|Location1.Y=2449.606mil|Location2.Y=2743.307mil|Absolute=True">NetC19_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1812.795mil|Location2.X=1977.559mil|Location1.Y=1440.748mil|Location2.Y=1495.275mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1812.795mil|Location2.X=1977.559mil|Location1.Y=1440.748mil|Location2.Y=1495.275mil|Absolute=True">NetC1_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1108537">2.8157mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1486.909mil|Location2.X=1977.559mil|Location1.Y=1377.755mil|Location2.Y=1888.976mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1486.909mil|Location2.X=1977.559mil|Location1.Y=1377.755mil|Location2.Y=1888.976mil|Absolute=True">NetC6_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8500732">21.5919mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2059.842mil|Location2.X=2105.511mil|Location1.Y=1089.37mil|Location2.Y=1190.157mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2059.842mil|Location2.X=2105.511mil|Location1.Y=1089.37mil|Location2.Y=1190.157mil|Absolute=True">NetD1_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="610233">1.55mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2138.582mil|Location2.X=2184.251mil|Location1.Y=1089.37mil|Location2.Y=1190.157mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2138.582mil|Location2.X=2184.251mil|Location1.Y=1089.37mil|Location2.Y=1190.157mil|Absolute=True">NetD2_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="610233">1.55mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1488.976mil|Location2.X=1534.645mil|Location1.Y=1085.433mil|Location2.Y=1186.22mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1488.976mil|Location2.X=1534.645mil|Location1.Y=1085.433mil|Location2.Y=1186.22mil|Absolute=True">NetD3_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="610236">1.55mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1548.031mil|Location2.X=1593.7mil|Location1.Y=1085.433mil|Location2.Y=1186.22mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1548.031mil|Location2.X=1593.7mil|Location1.Y=1085.433mil|Location2.Y=1186.22mil|Absolute=True">NetD4_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="610233">1.55mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1278.248mil|Location2.X=2594.881mil|Location1.Y=2134.645mil|Location2.Y=2899.803mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1278.248mil|Location2.X=2594.881mil|Location1.Y=2134.645mil|Location2.Y=2899.803mil|Absolute=True">NetD5_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="13632250">34.6259mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1317.716mil|Location2.X=2694.881mil|Location1.Y=2134.645mil|Location2.Y=2867.421mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1317.716mil|Location2.X=2694.881mil|Location1.Y=2134.645mil|Location2.Y=2867.421mil|Absolute=True">NetD5_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="9956262">25.2889mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1435.728mil|Location2.X=2794.881mil|Location1.Y=2134.645mil|Location2.Y=2906.791mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1435.728mil|Location2.X=2794.881mil|Location1.Y=2134.645mil|Location2.Y=2906.791mil|Absolute=True">NetD6_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="10349959">26.2889mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1477.165mil|Location2.X=2894.881mil|Location1.Y=2134.645mil|Location2.Y=2913.385mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1477.165mil|Location2.X=2894.881mil|Location1.Y=2134.645mil|Location2.Y=2913.385mil|Absolute=True">NetD6_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="13764445">34.9617mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1811.023mil|Location2.X=1946.062mil|Location1.Y=2361.149mil|Location2.Y=2542.519mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1811.023mil|Location2.X=1946.062mil|Location1.Y=2361.149mil|Location2.Y=2542.519mil|Absolute=True">NetD7_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1813.779mil|Location2.X=1871.259mil|Location1.Y=1158.267mil|Location2.Y=1306.299mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1813.779mil|Location2.X=1871.259mil|Location1.Y=1158.267mil|Location2.Y=1306.299mil|Absolute=True">NetJ1_D+</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1006735">2.5571mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1762.598mil|Location2.X=1814.173mil|Location1.Y=1158.267mil|Location2.Y=1306.299mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1762.598mil|Location2.X=1814.173mil|Location1.Y=1158.267mil|Location2.Y=1306.299mil|Absolute=True">NetJ1_D-</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="787402">2mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1883.023mil|Location2.X=2001.181mil|Location1.Y=2321.653mil|Location2.Y=2355.511mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1883.023mil|Location2.X=2001.181mil|Location1.Y=2321.653mil|Location2.Y=2355.511mil|Absolute=True">NetL2_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1443.7mil|Location2.X=2629.133mil|Location1.Y=1655.905mil|Location2.Y=2040.649mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1443.7mil|Location2.X=2629.133mil|Location1.Y=1655.905mil|Location2.Y=2040.649mil|Absolute=True">NetP3_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2143537">5.4446mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1317.716mil|Location2.X=1430.413mil|Location1.Y=1981.102mil|Location2.Y=2089.862mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1317.716mil|Location2.X=1430.413mil|Location1.Y=1981.102mil|Location2.Y=2089.862mil|Absolute=True">NetR15_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1524904">3.8733mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1278.248mil|Location2.X=1422.44mil|Location1.Y=1922.047mil|Location2.Y=2050.492mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1278.248mil|Location2.X=1422.44mil|Location1.Y=1922.047mil|Location2.Y=2050.492mil|Absolute=True">NetR16_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2225077">5.6517mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1771.456mil|Location2.X=1816.141mil|Location1.Y=1734.055mil|Location2.Y=1888.976mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1771.456mil|Location2.X=1816.141mil|Location1.Y=1734.055mil|Location2.Y=1888.976mil|Absolute=True">NetR1_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1023622">2.6mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1191.732mil|Location2.X=1447.047mil|Location1.Y=1021.259mil|Location2.Y=1680.314mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1191.732mil|Location2.X=1447.047mil|Location1.Y=1021.259mil|Location2.Y=1680.314mil|Absolute=True">RST</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8505415">21.6038mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1548.031mil|Location2.X=1593.7mil|Location1.Y=1207.48mil|Location2.Y=1368.307mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1548.031mil|Location2.X=1593.7mil|Location1.Y=1207.48mil|Location2.Y=1368.307mil|Absolute=True">RXLED</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1053931">2.677mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1260.63mil|Location2.X=1551.377mil|Location1.Y=1104.33mil|Location2.Y=1368.307mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1260.63mil|Location2.X=1551.377mil|Location1.Y=1104.33mil|Location2.Y=1368.307mil|Absolute=True">SCK</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="4146342">10.5317mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1367.913mil|Location2.X=1534.645mil|Location1.Y=1207.48mil|Location2.Y=1724.606mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1367.913mil|Location2.X=1534.645mil|Location1.Y=1207.48mil|Location2.Y=1724.606mil|Absolute=True">TXLED</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="5674207">14.4125mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1675.885mil|Location2.X=1871.259mil|Location1.Y=1289.173mil|Location2.Y=1421.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1675.885mil|Location2.X=1871.259mil|Location1.Y=1289.173mil|Location2.Y=1421.259mil|Absolute=True">USB_D+</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2972577">7.5503mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1707.381mil|Location2.X=1812.204mil|Location1.Y=1289.173mil|Location2.Y=1406.791mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1707.381mil|Location2.X=1812.204mil|Location1.Y=1289.173mil|Location2.Y=1406.791mil|Absolute=True">USB_D-</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1734976">4.4068mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1582.48mil|Location2.X=2156.692mil|Location1.Y=1029.33mil|Location2.Y=1437.007mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1582.48mil|Location2.X=2156.692mil|Location1.Y=1029.33mil|Location2.Y=1437.007mil|Absolute=True">VBUS</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="12414200">31.5321mm
+			</a></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br></body>
+</html>
