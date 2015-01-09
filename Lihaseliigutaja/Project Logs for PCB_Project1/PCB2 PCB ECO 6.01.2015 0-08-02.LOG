@@ -1,4 +1,0 @@
-Added Component: Designator=C20(1608[0603])
-Added Pin To Net: NetName=GND Pin=C20-1
-Added Pin To Net: NetName=3V3 Pin=C20-2
-Added Room: Name=Flyback

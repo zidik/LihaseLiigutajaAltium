@@ -1,8 +1,0 @@
-Removed Pin From Net: NetName=A0_1 Pin=U1-12
-Removed Pin From Net: NetName=A0_4 Pin=U1-32
-Change Component Footprint: Designator=U1 Old Footprint=44ML_N New Footprint=44ML_L
-Change Component Comment : Designator=U1 Old Comment=ATmega32U4RC-AU New Comment=ATmega32U4-AU
-Change Component Designator: OldDesignator=U1 NewDesignator=U?
-Added Pin To Net: NetName=A0_4 Pin=U?-12
-Added Pin To Net: NetName=EN_3 Pin=U?-18
-Added Pin To Net: NetName=A0_1 Pin=U?-32

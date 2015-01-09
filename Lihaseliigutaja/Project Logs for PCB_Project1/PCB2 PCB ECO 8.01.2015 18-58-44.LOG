@@ -1,7 +1,0 @@
-Removed Member From Class: ClassName=Flyback Member=C18
-Removed Member From Class: ClassName=Flyback Member=R11
-Removed Member From Class: ClassName=Flyback Member=R15
-Change Component Footprint: Designator=D6 Old Footprint=INDC1608L New Footprint=1608[0603]
-Added Member To Class: ClassName=Flyback Member=Component C20 Cap Semi
-Added Member To Class: ClassName=Flyback Member=Component R17 Res3
-Added Member To Class: ClassName=Flyback Member=Component R18 Res3
