@@ -108,18 +108,6 @@ DocumentUniqueId=
 DocumentPath=Project Outputs for PCB_Project1\Design Rule Check - PCB2.html
 DItemRevisionGUID=
 
-[GeneratedDocument2]
-DocumentPath=Project Outputs for PCB_Project1\Net Status - PCB2.html
-DItemRevisionGUID=
-
-[GeneratedDocument3]
-DocumentPath=Project Outputs for PCB_Project1\SimpleBOM\PCB_Project1.BOM
-DItemRevisionGUID=
-
-[GeneratedDocument4]
-DocumentPath=Project Outputs for PCB_Project1\SimpleBOM\PCB_Project1.CSV
-DItemRevisionGUID=
-
 [Configuration1]
 Name=Default Configuration
 ParameterCount=0
