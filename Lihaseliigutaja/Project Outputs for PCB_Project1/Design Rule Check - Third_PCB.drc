@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\Mark\Google Drive\Universitas tartuensis\2014_2015 1. semester\Riistvaraprojekt\Altium\Lihaseliigutaja\Third_PCB.PcbDoc
-Date     : 18.01.2015
-Time     : 19:58:38
+Date     : 23.01.2015
+Time     : 1:04:32
 
 Processing Rule : SMD To Plane Constraint (Distance=5mm) (All)
 Rule Violations :0
@@ -22,27 +22,17 @@ Processing Rule : Silk to Silk (Clearance=0.254mm) (All),(All)
 Rule Violations :0
 
 Processing Rule : Silk To Solder Mask (Clearance=0.1mm) (IsPad),(All)
-   Violation between Text "D6" (1.2mm,10mm)  Top Overlay and 
-                     Pad J1-Case(2mm,12.25mm)  Top Layer
-   Violation between Text "D1" (1mm,20.4mm)  Top Overlay and 
-                     Pad J1-Case(2mm,19.75mm)  Top Layer
-   Violation between Text "P2" (17.2mm,9.2mm)  Top Overlay and 
-                     Pad U1-11(17.3mm,11mm)  Top Layer
-   Violation between Text "D5" (1mm,5mm)  Top Overlay and 
-                     Pad Free-MOUNT(3mm,3mm)  Multi-Layer
-   Violation between Text "R14" (4mm,5mm)  Top Overlay and 
-                     Pad Free-MOUNT(3mm,3mm)  Multi-Layer
-Rule Violations :5
+Rule Violations :0
 
 Processing Rule : Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)
-   Violation between Pad J1-ID(4.85mm,15.35mm)  Top Layer and 
-                     Pad J1-GND(4.85mm,14.7mm)  Top Layer
-   Violation between Pad J1-D+(4.85mm,16mm)  Top Layer and 
-                     Pad J1-ID(4.85mm,15.35mm)  Top Layer
-   Violation between Pad J1-D+(4.85mm,16mm)  Top Layer and 
-                     Pad J1-D-(4.85mm,16.65mm)  Top Layer
-   Violation between Pad J1-Vbus(4.85mm,17.3mm)  Top Layer and 
-                     Pad J1-D-(4.85mm,16.65mm)  Top Layer
+   Violation between Pad J1-D-(4.85mm,18.65mm)  Top Layer and 
+                     Pad J1-Vbus(4.85mm,19.3mm)  Top Layer
+   Violation between Pad J1-D-(4.85mm,18.65mm)  Top Layer and 
+                     Pad J1-D+(4.85mm,18mm)  Top Layer
+   Violation between Pad J1-ID(4.85mm,17.35mm)  Top Layer and 
+                     Pad J1-D+(4.85mm,18mm)  Top Layer
+   Violation between Pad J1-GND(4.85mm,16.7mm)  Top Layer and 
+                     Pad J1-ID(4.85mm,17.35mm)  Top Layer
    Violation between Pad U2-2(36.975mm,25.5mm)  Top Layer and 
                      Pad U2-1(36.975mm,26mm)  Top Layer
    Violation between Pad U2-3(36.975mm,25mm)  Top Layer and 
@@ -155,5 +145,5 @@ Processing Rule : Minimum Annular Ring (Minimum=0.15mm) (All)
 Rule Violations :0
 
 
-Violations Detected : 50
-Time Elapsed        : 00:00:02
+Violations Detected : 45
+Time Elapsed        : 00:00:03
